@@ -1,0 +1,6 @@
+# Define the action message for DockUndock action
+float32 secs                   # Goal
+---
+bool success                   # Result
+---
+float32 feedback                # Feedback
