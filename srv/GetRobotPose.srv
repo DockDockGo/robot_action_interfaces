@@ -1,3 +1,3 @@
 string frame_id  # The desired frame ID for the pose
 ---
-geometry_msgs/PoseStamped pose  # The robot's pose in the specified frame
+geometry_msgs/PoseStamped robot_pose  # The robot's pose in the specified frame

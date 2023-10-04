@@ -3,4 +3,4 @@ float32 secs                   # Goal
 ---
 bool success                   # Result
 ---
-float32 feedback                # Feedback
+geometry_msgs/PoseStamped feedback                # Feedback
