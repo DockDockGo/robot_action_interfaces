@@ -7,19 +7,21 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
-# find_package(std_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
-# uncomment the following section in order to fill in
-# further dependencies manually.
-# find_package(<dependency> REQUIRED)
 
-# set(action_files
-#     "action/DockUndock.action"
-# )
+# Automatically find all action files in the 'action' folder
+set(ACTION_FILES "action/DockUndock.action")
+
+# Automatically find all service files in the 'srv' folder
+set(SRV_FILES "srv/GetRobotPose.srv")
 
 rosidl_generate_interfaces(${PROJECT_NAME}
-  "action/DockUndock.action"
+  ${ACTION_FILES}
+  ${SRV_FILES}
+  DEPENDENCIES geometry_msgs
 )
+ament_export_dependencies(rosidl_default_runtime)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
