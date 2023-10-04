@@ -1,6 +1,5 @@
-# Define the action message for DockUndock action
-float32 secs                   # Goal
+float32 secs
 ---
-bool success                   # Result
+bool success
 ---
-geometry_msgs/PoseStamped feedback                # Feedback
+geometry_msgs/PoseWithCovarianceStamped feedback

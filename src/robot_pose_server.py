@@ -1,15 +1,16 @@
+#!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
 from robot_action_interfaces.srv import GetRobotPose  # Import the updated service message
-from geometry_msgs.msg import PoseStamped
+from geometry_msgs.msg import PoseWithCovarianceStamped
 
 class RobotPoseService(Node):
 
     def __init__(self):
         super().__init__('robot_pose_service')
-        self.robot_pose = PoseStamped()
+        self.robot_pose = PoseWithCovarianceStamped()
         self.pose_subscription = self.create_subscription(
-            PoseStamped,
+            PoseWithCovarianceStamped,
             '/map_pose',  # Topic on which pose is being relayed
             self.pose_callback,
             10  # Adjust the queue size as needed
@@ -26,6 +27,7 @@ class RobotPoseService(Node):
     def pose_callback(self, msg):
         # Callback function for the /map_pose topic
         self.robot_pose = msg
+        # self.get_logger().info(str(msg))
 
     def get_robot_pose_callback(self, request, response):
         response.robot_pose = self.robot_pose
