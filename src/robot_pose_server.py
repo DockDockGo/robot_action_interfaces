@@ -8,7 +8,8 @@ class RobotPoseService(Node):
 
     def __init__(self):
         super().__init__('robot_pose_service')
-        self.robot_pose = PoseWithCovarianceStamped()
+        # self.robot_pose = PoseWithCovarianceStamped()
+        self.robot_pose = None
         self.pose_subscription = self.create_subscription(
             PoseWithCovarianceStamped,
             '/map_pose',  # Topic on which pose is being relayed
@@ -27,7 +28,7 @@ class RobotPoseService(Node):
     def pose_callback(self, msg):
         # Callback function for the /map_pose topic
         self.robot_pose = msg
-        # self.get_logger().info(str(msg))
+        # self.get_logger().info(str(type(msg)))
 
     def get_robot_pose_callback(self, request, response):
         response.robot_pose = self.robot_pose
