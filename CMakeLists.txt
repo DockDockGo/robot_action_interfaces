@@ -13,6 +13,7 @@ find_package(rosidl_default_generators REQUIRED)
 # Automatically find all action files in the 'action' folder
 set(ACTION_FILE_1 "action/DockUndock.action")
 set(ACTION_FILE_2 "action/Navigate.action")
+set(ACTION_FILE_3 "action/StateMachine.action")
 
 # Automatically find all service files in the 'srv' folder
 set(SRV_FILES "srv/GetRobotPose.srv")
@@ -20,6 +21,7 @@ set(SRV_FILES "srv/GetRobotPose.srv")
 rosidl_generate_interfaces(${PROJECT_NAME}
   ${ACTION_FILE_1}
   ${ACTION_FILE_2}
+  ${ACTION_FILE_3}
   ${SRV_FILES}
   DEPENDENCIES geometry_msgs
 )
