@@ -9,6 +9,7 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
+find_package(nav_msgs)
 
 # Automatically find all action files in the 'action' folder
 set(ACTION_FILE_1 "action/DockUndock.action")
@@ -23,7 +24,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   ${ACTION_FILE_2}
   ${ACTION_FILE_3}
   ${SRV_FILES}
-  DEPENDENCIES geometry_msgs
+  DEPENDENCIES geometry_msgs nav_msgs
 )
 ament_export_dependencies(rosidl_default_runtime)
 

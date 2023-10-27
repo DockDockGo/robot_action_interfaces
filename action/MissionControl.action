@@ -1,5 +1,6 @@
-geometry_msgs/PoseStamped[] goals
+int16[] robot_specific_dock_id
 ---
 bool success
 ---
 geometry_msgs/PoseWithCovarianceStamped pose_feedback
+string state_feedback

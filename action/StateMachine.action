@@ -1,5 +1,8 @@
-float32 secs
+int16 start_dock_id
+int16 end_dock_id
+geometry_msgs/PoseStamped[] goals
 ---
 bool success
 ---
 geometry_msgs/PoseWithCovarianceStamped pose_feedback
+string state_feedback
