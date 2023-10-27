@@ -1,4 +1,4 @@
-int16[] robot_specific_dock_id
+int16[] robot_specific_dock_ids
 ---
 bool success
 ---
