@@ -16,7 +16,6 @@ class RobotPoseService(Node):
             self.pose_callback,
             10  # Adjust the queue size as needed
         )
-        self.pose_subscription 
 
         # Create the service server
         self.robot_pose_service = self.create_service(
