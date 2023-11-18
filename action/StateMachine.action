@@ -1,6 +1,8 @@
 int16 start_dock_id
 int16 end_dock_id
 geometry_msgs/PoseStamped[] goals
+float32 dock_lateral_bias
+float32 dock_forward_bias
 ---
 bool success
 ---

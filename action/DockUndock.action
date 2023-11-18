@@ -1,4 +1,6 @@
 float32 secs
+float32 dock_lateral_bias
+float32 dock_forward_bias
 ---
 bool success
 ---
