@@ -1,7 +1,8 @@
 int16[] robot_specific_dock_ids
 int16[] robot_specific_undock_flags
 ---
-bool success
+int32 status_code
+string text
 ---
 geometry_msgs/PoseWithCovarianceStamped[] pose_feedback
 string[] state_feedback
